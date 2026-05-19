@@ -12,12 +12,16 @@ workflows:
     scripts:
       - name: Get Flutter packages
         script: |
+          cd $CM_BUILD_DIR
+          flutter clean
           flutter pub get
       - name: Build APK
         script: |
+          cd $CM_BUILD_DIR
           flutter build apk --release
       - name: Build AAB
         script: |
+          cd $CM_BUILD_DIR
           flutter build appbundle --release
     artifacts:
       - build/app/outputs/**/*.apk
