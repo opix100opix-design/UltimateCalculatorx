@@ -10,9 +10,6 @@ workflows:
       events:
         - push
         - pull_request
-      branch:
-        include:
-          - main
     scripts:
       - name: Set up local.properties
         script: |
